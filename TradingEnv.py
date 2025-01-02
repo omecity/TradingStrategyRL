@@ -1,7 +1,7 @@
 
 
 class TradingEnvironment:
-    
+
     def __init__(self, data, initial_balance=10000):
         self.data = data
         self.n_steps = len(data)
@@ -17,3 +17,11 @@ class TradingEnvironment:
             float(self.balance),
             float(self.holdings),
         ], dtype=np.float32)
+
+    def reset(self):
+        self.current_step = 0
+        self.balance = 10000
+        self.portfolio_value = 10000
+        self.holdings = 0
+        self.done = False
+        return self.get_state()
