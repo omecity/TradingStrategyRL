@@ -1,6 +1,7 @@
 
 
 class DQN(nn.Module):
+    
     def __init__(self, input_dim, action_dim):
         super(DQN, self).__init__()
         self.fc = nn.Sequential(
