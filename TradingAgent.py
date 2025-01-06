@@ -25,3 +25,30 @@ class DQNAgent:
         state_tensor = torch.FloatTensor(state).unsqueeze(0)
         q_values = self.model(state_tensor)
         return torch.argmax(q_values).item()
+
+    def train(self, batch_size=32):
+        if len(self.memory) < batch_size:
+            return
+
+        batch = random.sample(self.memory, batch_size)
+        states, actions, rewards, next_states, dones = zip(*batch)
+
+        states = torch.FloatTensor(states)
+        actions = torch.LongTensor(actions)
+        rewards = torch.FloatTensor(rewards)
+        next_states = torch.FloatTensor(next_states)
+        dones = torch.FloatTensor(dones)
+
+        q_values = self.model(states)
+        next_q_values = self.model(next_states)
+
+        q_targets = q_values.clone()
+        for i in range(batch_size):
+            q_targets[i, actions[i]] = rewards[i] + (1 - dones[i]) * self.gamma * torch.max(next_q_values[i])
+
+        loss = self.criterion(q_values, q_targets.detach())
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
+
+        self.epsilon = max(self.min_epsilon, self.epsilon * self.epsilon_decay)
