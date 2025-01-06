@@ -18,3 +18,10 @@ class DQNAgent:
 
     def store_experience(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
+
+    def act(self, state):
+        if np.random.rand() < self.epsilon:
+            return np.random.choice(self.action_dim)
+        state_tensor = torch.FloatTensor(state).unsqueeze(0)
+        q_values = self.model(state_tensor)
+        return torch.argmax(q_values).item()
