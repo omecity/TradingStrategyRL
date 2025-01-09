@@ -4,3 +4,8 @@ def train_agent(ticker="AAPL", start_date="2018-01-01", end_date="2020-01-01", e
     data = fetch_stock_data(ticker, start_date, end_date)
     env = TradingEnvironment(data)
     agent = DQNAgent(state_dim=3, action_dim=3)
+
+    rewards = []
+    portfolio_values = []
+    actions = []
+    prices = data['Close'].values
