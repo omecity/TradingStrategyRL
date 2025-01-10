@@ -9,3 +9,9 @@ def train_agent(ticker="AAPL", start_date="2018-01-01", end_date="2020-01-01", e
     portfolio_values = []
     actions = []
     prices = data['Close'].values
+
+    for episode in range(episodes):
+        state = env.reset()
+        total_reward = 0
+        episode_portfolio_values = []
+        episode_actions = []
