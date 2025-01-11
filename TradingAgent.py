@@ -1,4 +1,16 @@
+import numpy as np
 
+from collections import deque
+import random
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+
+from TradingModel import *
+
+
+# Define the Agent
 
 class DQNAgent:
 
