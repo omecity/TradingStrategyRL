@@ -51,3 +51,25 @@ plt.xlabel('Time Step')
 plt.ylabel('Portfolio Value ($)')
 plt.title('Portfolio Value Across Episodes')
 plt.show()
+
+
+# Trading Actions over time
+plt.figure(figsize=(10, 6))
+plt.plot(prices, label="Stock Price", color='blue')
+
+# Loop through episodes and plot actions
+for episode_actions in actions:
+    buy_steps = [step for step, action in episode_actions if action == 1]
+    sell_steps = [step for step, action in episode_actions if action == 2]
+    plt.scatter(buy_steps, prices[buy_steps], marker="^", color="green", alpha=0.5)
+    plt.scatter(sell_steps, prices[sell_steps], marker="v", color="red", alpha=0.5)
+
+# Add single representative markers for legend
+plt.scatter([], [], label="Buy", marker="^", color="green")
+plt.scatter([], [], label="Sell", marker="v", color="red")
+
+plt.xlabel('Time Step')
+plt.ylabel('Price ($)')
+plt.title('Trading Actions Overlaid on Stock Price')
+plt.legend()
+plt.show()
