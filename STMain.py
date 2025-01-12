@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import random
 import yfinance as yf
+import matplotlib.pyplot as plt
 
 
 from collections import deque
@@ -27,7 +28,16 @@ from TradingTraining import *
 ticker="AAPL"
 start_date="2018-01-01"
 end_date="2020-01-01"
-episodes=10
+episodes=20
 
 
 rewards, portfolio_values, actions, prices = train_agent(ticker, start_date, end_date, episodes)
+
+
+# total rewards over episodes 
+plt.figure(figsize=(10, 6))
+plt.plot(rewards)
+plt.xlabel('Episode')
+plt.ylabel('Total Reward')
+plt.title('Reward Progression')
+plt.show()
