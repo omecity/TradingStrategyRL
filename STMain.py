@@ -41,3 +41,13 @@ plt.xlabel('Episode')
 plt.ylabel('Total Reward')
 plt.title('Reward Progression')
 plt.show()
+
+
+# portfolio value over time
+plt.figure(figsize=(10, 6))
+for episode_portfolio in portfolio_values:
+    plt.plot(episode_portfolio, alpha=0.5)
+plt.xlabel('Time Step')
+plt.ylabel('Portfolio Value ($)')
+plt.title('Portfolio Value Across Episodes')
+plt.show()
