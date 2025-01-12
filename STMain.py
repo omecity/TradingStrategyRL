@@ -73,3 +73,16 @@ plt.ylabel('Price ($)')
 plt.title('Trading Actions Overlaid on Stock Price')
 plt.legend()
 plt.show()
+
+
+# Cumulative return and benchmark over episodes
+plt.figure(figsize=(10, 6))
+cumulative_returns = [portfolio[-1] / portfolio[0] - 1 for portfolio in portfolio_values]
+benchmark_return = (prices[-1] / prices[0]) - 1
+plt.plot(cumulative_returns, label="Agent Cumulative Return")
+plt.axhline(benchmark_return, label="Buy-and-Hold Benchmark", linestyle="--", color="orange")
+plt.xlabel('Episode')
+plt.ylabel('Cumulative Return')
+plt.title('Agent Return vs. Benchmark')
+plt.legend()
+plt.show()
