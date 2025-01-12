@@ -29,4 +29,5 @@ start_date="2018-01-01"
 end_date="2020-01-01"
 episodes=10
 
-train_agent(ticker, start_date, end_date, episodes)
+
+rewards, portfolio_values, actions, prices = train_agent(ticker, start_date, end_date, episodes)
