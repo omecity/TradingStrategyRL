@@ -46,4 +46,6 @@ def train_agent(ticker="AAPL", start_date="2018-01-01", end_date="2020-01-01", e
         portfolio_values.append(episode_portfolio_values)
         actions.append(episode_actions)
         print(f"Episode {episode + 1}/{episodes}, Total Reward: {total_reward}")
+    
+    return rewards, portfolio_values, actions, prices
 
