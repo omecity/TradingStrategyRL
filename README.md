@@ -1,1 +1,1 @@
-A file that contains information about the project.
+** A Stock Trading Algorithm Using Deep Q-Learning (DQN) with PyTorch **
