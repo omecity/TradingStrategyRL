@@ -1,1 +1,1 @@
-***A Stock Trading Algorithm Using Deep Q-Learning (DQN) With PyTorch***
+# A Stock Trading Algorithm Using Deep Q-Learning (DQN) With PyTorch
