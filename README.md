@@ -5,3 +5,5 @@ Learning (DQN) with PyTorch. The agent was trained on historical market data to 
 long-term profit by learning optimal trading strategies.
 
 ### Fetch Stock Data ###
+
+Fetch data from yahoo finance by passing in formal parameters - ticker, start date, and end date.
