@@ -4,4 +4,4 @@ Built a stock trading algorithm that autonomously makes buy/sell decisions using
 Learning (DQN) with PyTorch. The agent was trained on historical market data to maximize
 long-term profit by learning optimal trading strategies.
 
-#### Fetch Stock Data ####
+### Fetch Stock Data ###
