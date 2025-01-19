@@ -20,3 +20,9 @@ An environment class that would store the data, and initialize the initial balan
 --
 
 The DQN Model defines a neural network to approximate the Q-function for action selection. The input is a 3-dimensional state [current_price, balance, holdings], and the output are 3-dimensional Q-values action values (Hold, Buy, Sell).
+
+
+Trading Agent 
+<hr>
+
+The DNAgent Class, which is the agent class represents the RL agent, interacting with the environment and learning from experiences.
