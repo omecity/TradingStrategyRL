@@ -22,4 +22,4 @@ The DQN Model defines a neural network to approximate the Q-function for action 
 
 ### Trading Agent 
 
-The DNAgent Class, which is the agent class represents the RL agent, interacting with the environment and learning from experiences.
+The DNAgent Class, which is the agent class represents the RL agent, interacting with the environment and learning from experiences. When the object the class is created, then the object is instantiated with the parameters in the method signature. There is also a store_experience, act, and train methods within the class implementation.
